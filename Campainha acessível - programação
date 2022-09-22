@@ -1,0 +1,35 @@
+boolean __ardublockDigitalRead(int pinNumber)
+{
+  pinMode(pinNumber, INPUT);
+  return digitalRead(pinNumber);
+}
+
+
+int _ABVAR_1_a;
+void __ardublockDigitalWrite(int pinNumber, boolean status)
+{
+  pinMode(pinNumber, OUTPUT);
+  digitalWrite(pinNumber, status);
+}
+
+
+void setup()
+{
+}
+
+void loop()
+{
+  if (__ardublockDigitalRead(9))
+  {
+    tone(7, 440, 2000);
+    for (_ABVAR_1_a=1; _ABVAR_1_a<= ( 4 ); ++_ABVAR_1_a )
+    {
+      __ardublockDigitalWrite(3, HIGH);
+      delay( 1000 );
+      __ardublockDigitalWrite(3, LOW);
+      delay( 1000 );
+      noTone(7);
+    }
+  }
+}
+
