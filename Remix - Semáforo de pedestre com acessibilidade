@@ -1,0 +1,28 @@
+void __ardublockDigitalWrite(int pinNumber, boolean status)
+{
+  pinMode(pinNumber, OUTPUT);
+  digitalWrite(pinNumber, status);
+}
+
+
+void setup()
+{
+}
+
+void loop()
+{
+  __ardublockDigitalWrite(4, HIGH);
+  tone(3, 440);
+  delay( 3000 );
+  __ardublockDigitalWrite(4, LOW);
+  noTone(3);
+  __ardublockDigitalWrite(7, HIGH);
+  tone(3, 528);
+  delay( 2000 );
+  __ardublockDigitalWrite(7, LOW);
+  noTone(3);
+  __ardublockDigitalWrite(9, HIGH);
+  delay( 3000 );
+  __ardublockDigitalWrite(9, LOW);
+}
+
